@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Formulario</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/4140fe5af3.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+	<body>
+		<main>
+			<section class="container-form">
+				<header>
+					<h3>START FOR FREE</h3>
+					<h1>Create new account <span>.</span></h1>
+				</header>
+				<form id="form">
+					<div class="container-names">
+						<div class="container-input">
+							<div>
+								<label>first name</label>
+								<input
+									type="text"
+									name="first-name"
+									id="first-name"
+									required
+								/>
+							</div>
+							<i class="fa-solid fa-id-card"></i>
+						</div>
+						<div class="container-input">
+							<div>
+								<label>last name</label>
+								<input
+									type="text"
+									name="last-name"
+									id="last-name"
+									required
+								/>
+							</div>
+							<i class="fa-solid fa-id-card"></i>
+						</div>
+					</div>
+					<div class="container">
+						<div class="container-input">
+							<div>
+								<label>Email</label>
+								<input type="email" name="email" id="email" required />
+							</div>
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+					</div>
+					<div class="container">
+						<div class="container-input focus-input">
+							<div>
+								<label>Password</label>
+								<input
+									type="password"
+									name="password"
+									id="password"
+									required
+								/>
+							</div>
+							<i class="fa-solid fa-eye"></i>
+							<small class="message">message</small>
+						</div>
+					</div>
+					<button type="submit" class="btn-create-account" >
+						Create account
+					</button>
+				</form>
+			</section>
+		</main>
+		<section class="container-img ">
+			<div  class="background-container background-view" >
+					<div class="container-logo">
+				<img src="./image/logo.png" class="logo" />
+				<h2>Join this adventure <span>.</span></h2>
+				<button class="btn-create-account" id="show-register-section"> Register Now</button>
+			</div>
+			</div>
+		
+		</section>
+		<script type="text/javascript" src="./App.js"></script>
+	</body>
+</html>
