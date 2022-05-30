@@ -149,7 +149,7 @@ form {
 	/*margin-left: 5%;*/
 	width: 42%;
 }
-.container-input > div {
+.container-input > section {
 	position: relative;
 	left: -10px;
 	width: 50%;
@@ -157,11 +157,11 @@ form {
 	display: flex;
 	flex-direction: column;
 }
-.container-input > div label {
+.container-input > section label {
 	font-size: 10px;
 	color: #7b7d87;
 }
-.container-input > div input {
+.container-input > section input {
 	outline: none;
 	border: none;
 	background: transparent;
@@ -205,9 +205,58 @@ form {
 	background-color: #1d90f5;
 	color: white;
 }
+.show-password  #eye-slash{
+	display:block
+}
+.show-password  #eye-icon{
+	display:none
+}
+.icons{
+	position:static;
+	padding:0px
+	width: auto;
+	display:block
+}
+#eye-icon{
+	cursor:pointer
+}
+#eye-slash{
+	display:none;
+	cursor: pointer;
+}
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 1000px #323644 inset !important;
 	-webkit-text-fill-color: white !important;
+}
+@media  screen and (max-width: 700px) {
+	main{
+		width:55vw
+	}
+	
+}
+@media screen and (max-width: 500px) {
+	body{
+		flex-direction:column;
+		align-items:center;
+		width:100%
+	}
+	main{
+		position: absolute;
+    transform: translateY(-100%);
+    width: 100%;
+	}
+	
+	header > h3 {
+	font-size: clamp(1em, 1.5vw, 1em);
+	color: #7b7d87;
+	}
+	header > h1 {
+	    font-size: clamp(1.5em, 2.5vw, 3em);
+    font-weight: bolder;
+    	}
+	.message{
+		right:0%
+	}
 }

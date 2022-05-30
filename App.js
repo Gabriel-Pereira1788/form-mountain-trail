@@ -1,14 +1,13 @@
 const form = document.getElementById("form");
-const backgroundImg = document.querySelector(".background-container");
-const containerImg = document.querySelector(".container-img");
 const registerSection = document.querySelector("main");
 const showRegister = document.querySelector("#show-register-section");
 const containerInputs = document.querySelectorAll(".container-input");
 const buttonCreate = document.querySelector(".btn-create-account");
-const containerLogo = document.querySelector('.container-logo')
-const headers = containerLogo.querySelectorAll('h2')
-
+const containerLogo = document.querySelector(".container-logo");
+const headers = containerLogo.querySelectorAll("h2");
+const iconsContainer = document.querySelector(".icons");
 const inputsElements = [];
+
 const verifyFocus = (element) => {
 	containerInputs.forEach((container) =>
 		container != element ? container.classList.remove("focus-input") : false
@@ -28,12 +27,12 @@ function styleSetContainer(container) {
 
 styleSetContainer(containerInputs);
 
-class ValidationsForm{
-	constructor(){
-		this.emailsValidy = ["@gmail.com", "@outlook.com", "@yahoo.com"]
-		this.stateValidationInput = []
-		this.isRegistered = false
-		this.TIME_DISPLAY = 2000
+class ValidationsForm {
+	constructor() {
+		this.emailsValidy = ["@gmail.com", "@outlook.com", "@yahoo.com"];
+		this.stateValidationInput = [];
+		this.isRegistered = false;
+		this.TIME_DISPLAY = 2000;
 	}
 	filterEmptyValues(value) {
 		const valuesFiltred = [...value.split("")]
@@ -59,7 +58,7 @@ class ValidationsForm{
 	}
 	email(input, parent) {
 		let users = JSON.parse(localStorage.getItem("users"));
-		!users ? users = [] : false
+		!users ? (users = []) : false;
 		let findUser = users.filter((user) => user.email === input.value);
 
 		const messageError = "Email invalido";
@@ -80,7 +79,6 @@ class ValidationsForm{
 		const passwordChars = input.value.length > 8;
 		this.itsValid(passwordChars, parent, messageError);
 	}
-
 }
 
 const makeId = () => {
@@ -91,7 +89,7 @@ const makeId = () => {
 };
 
 function Submit(event) {
-	const Validations = new ValidationsForm()
+	const Validations = new ValidationsForm();
 
 	inputsElements.forEach((input) => {
 		const notEmpty = Validations.filterEmptyValues(input.value);
@@ -101,9 +99,7 @@ function Submit(event) {
 			? parent.classList.add("error")
 			: parent.classList.remove("error");
 
-		Validations[input.id]
-			? Validations[input.id](input, parent)
-			: false;
+		Validations[input.id] ? Validations[input.id](input, parent) : false;
 	});
 
 	const validated = Validations.stateValidationInput.every(
@@ -122,13 +118,13 @@ function Submit(event) {
 	}
 }
 
-function Welcome({firstName,lastName}) {
-	const headerUser= containerLogo.querySelector('#user-header')
+function Welcome({ firstName, lastName }) {
+	const headerUser = containerLogo.querySelector("#user-header");
 	inputsElements.forEach((input) => (input.value = ""));
 	registerSection.classList.remove("register-on");
-	headers.forEach( hd => hd.classList.remove('show-header'))
+	headers.forEach((hd) => hd.classList.remove("show-header"));
 
-	headerUser.innerHTML = `Welcome ${firstName} ${lastName} <span>.</span>`
+	headerUser.innerHTML = `Welcome ${firstName} ${lastName} <span>.</span>`;
 }
 
 function Storage(data) {
@@ -139,11 +135,21 @@ function Storage(data) {
 }
 
 const displayRegister = () => {
-	registerSection.classList.add("register-on")
-	headers.forEach( hd2 => hd2.classList.add('show-header'))
+	registerSection.classList.add("register-on");
+	headers.forEach((hd2) => hd2.classList.add("show-header"));
+};
+
+const toggleDisplay = (event) =>{
+		const inputPassword = document.querySelector("#password");
+	const element = event.currentTarget;
+	element.classList.toggle("show-password");
+	element.classList.contains("show-password")
+		? (inputPassword.type = "text")
+		: (inputPassword.type = "password");
 }
 
 window.addEventListener("load", () => {
+	const backgroundImg = document.querySelector(".background-container");
 	backgroundImg.classList.remove("background-view");
 	backgroundImg.classList.add("gradient-color");
 });
@@ -151,3 +157,4 @@ window.addEventListener("load", () => {
 form.addEventListener("submit", (event) => event.preventDefault());
 showRegister.addEventListener("click", displayRegister);
 buttonCreate.addEventListener("click", Submit);
+iconsContainer.addEventListener("click",toggleDisplay);

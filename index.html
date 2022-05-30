@@ -27,7 +27,7 @@
 				<form id="form">
 					<div class="container-names">
 						<div class="container-input">
-							<div>
+							<section>
 								<label>first name</label>
 								<input
 									type="text"
@@ -35,11 +35,11 @@
 									id="firstName"
 									required
 								/>
-							</div>
+							</section>
 							<i class="fa-solid fa-id-card"></i>
 						</div>
 						<div class="container-input">
-							<div>
+							<section>
 								<label>last name</label>
 								<input
 									type="text"
@@ -47,23 +47,28 @@
 									id="lastName"
 									required
 								/>
-							</div>
+							</section>
 							<i class="fa-solid fa-id-card"></i>
 						</div>
 					</div>
 					<div class="container">
 						<div class="container-input">
-							<div>
+							<section>
 								<label>Email</label>
-								<input type="email" name="email" id="email" required />
-							</div>
+								<input
+									type="email"
+									name="email"
+									id="email"
+									required
+								/>
+							</section>
 							<i class="fa-solid fa-envelope"></i>
 							<small class="message">message</small>
 						</div>
 					</div>
 					<div class="container">
-						<div class="container-input focus-input">
-							<div>
+						<div class="container-input focus-input ">
+							<section>
 								<label>Password</label>
 								<input
 									type="password"
@@ -71,27 +76,39 @@
 									id="password"
 									required
 								/>
+							</section>
+							<div class="icons ">
+								<i class="fa-solid fa-eye" id="eye-icon"></i>
+								<i
+									class="fa-solid fa-eye-slash"
+									id="eye-slash"
+								></i>
 							</div>
-							<i class="fa-solid fa-eye"></i>
 							<small class="message">message</small>
 						</div>
 					</div>
-					<button type="submit" class="btn-create-account" >
+					<button type="submit" class="btn-create-account">
 						Create account
 					</button>
 				</form>
 			</section>
 		</main>
-		<section class="container-img ">
-			<div  class="background-container background-view" >
-					<div class="container-logo">
-				<img src="./image/logo.png" class="logo" />
-				<h2 id="header-main" class="show-header">Join this adventure <span>.</span></h2>
-				<h2  id="user-header" class="show-header"></h2>
-				<button class="btn-create-account" id="show-register-section"> Register Now</button>
+		<section class="container-img">
+			<div class="background-container background-view">
+				<div class="container-logo">
+					<img src="./image/logo.png" class="logo" />
+					<h2 id="header-main" class="show-header">
+						Join this adventure <span>.</span>
+					</h2>
+					<h2 id="user-header" class="show-header"></h2>
+					<button
+						class="btn-create-account"
+						id="show-register-section"
+					>
+						Register Now
+					</button>
+				</div>
 			</div>
-			</div>
-		
 		</section>
 		<script type="text/javascript" src="./App.js"></script>
 	</body>
